@@ -17,6 +17,8 @@ Base = declarative_base()
 
 
 def init_db() -> None:
+    # Import models so they register themselves on Base.metadata before DDL runs
+    import app.models  # noqa: F401
     Base.metadata.create_all(bind=engine)
 
 
