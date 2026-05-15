@@ -1,6 +1,6 @@
 """
 Top 10 Product Opportunities page.
-Ranked by opportunity_score — products with high TikTok virality
+Ranked by opportunity_score — products with high Google Trends interest
 that haven't yet been dominated on Amazon.
 """
 
@@ -102,7 +102,7 @@ def render_card(row: pd.Series, rank: int) -> None:
 
             sc1, sc2 = st.columns(2)
             with sc1:
-                st.markdown(f"TikTok Virality **{row['virality_score']:.0f}/100**")
+                st.markdown(f"Google Trends Interest **{row['virality_score']:.0f}/100**")
                 st.progress(float(row["virality_score"]) / 100)
             with sc2:
                 st.markdown(f"Amazon Demand **{row['demand_score']:.0f}/100**")
@@ -110,7 +110,7 @@ def render_card(row: pd.Series, rank: int) -> None:
 
             details = []
             if row.get("tiktok_views", 0):
-                details.append(f"TikTok: **{int(row['tiktok_views']):,}** views · **{int(row['tiktok_posts']):,}** posts")
+                details.append(f"Google Trends: **{int(row['tiktok_views']):,}** est. monthly searches · **{int(row['tiktok_posts']):,}** related queries")
             if row.get("amazon_rank"):
                 price_str = f"${row['amazon_price']:.2f}" if row.get("amazon_price") else "N/A"
                 rating_str = f"{row['amazon_rating']:.1f}★" if row.get("amazon_rating") else "N/A"
@@ -126,9 +126,10 @@ def render_card(row: pd.Series, rank: int) -> None:
             if row.get("product_url"):
                 st.link_button("🛒 Amazon", row["product_url"], use_container_width=True)
             if row.get("tiktok_hashtag"):
+                term = row["tiktok_hashtag"].replace("_", "+")
                 st.link_button(
-                    "🎵 TikTok",
-                    f"https://www.tiktok.com/tag/{row['tiktok_hashtag']}",
+                    "📊 Google Trends",
+                    f"https://trends.google.com/trends/explore?q={term}&geo=US",
                     use_container_width=True,
                 )
 
@@ -164,7 +165,7 @@ def render_radar(df: pd.DataFrame) -> None:
 def main() -> None:
     st.title("🎯 Top 10 Product Opportunities")
     st.markdown(
-        "Products ranked by **Opportunity Score** — high TikTok buzz + "
+        "Products ranked by **Opportunity Score** — high Google Trends interest + "
         "a still-growing Amazon market = prime entry window."
     )
 
@@ -184,12 +185,14 @@ def main() -> None:
         st.markdown("""
         | Component | Weight | Signal |
         |-----------|--------|--------|
-        | TikTok Virality | 60% | Log-scaled hashtag view count |
-        | Amazon Demand   | 40% | Inverse Best Seller Rank |
-        | Opportunity Bonus | +0–20 pts | High virality + mid-tier BSR (50–500) |
+        | Component | Weight | Signal |
+        |-----------|--------|--------|
+        | Google Trends Interest | 60% | 7-day search interest score (0–100) |
+        | Amazon Demand          | 40% | Inverse Best Seller Rank |
+        | Opportunity Bonus      | +0–20 pts | High interest + mid-tier BSR (50–500) |
 
-        **Sweet spot**: TikTok virality > 50 *and* Amazon BSR between 50–500.
-        This means the product is going viral but Amazon sellers haven't
+        **Sweet spot**: Google Trends interest > 50 *and* Amazon BSR between 50–500.
+        This means the product is actively being searched but Amazon sellers haven't
         fully saturated the listing yet — the best entry window.
         """)
 

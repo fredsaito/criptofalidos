@@ -66,7 +66,7 @@ def main() -> None:
     init_db()
 
     st.title("📈 CriptoFalidos — Product Trend Dashboard")
-    st.caption("Real-time product opportunity analysis · TikTok × Amazon")
+    st.caption("Real-time product opportunity analysis · Google Trends × Amazon")
 
     with st.spinner("Loading data…"):
         df = load_data()
@@ -131,10 +131,10 @@ def main() -> None:
             hover_data={
                 "trend_score": ":.1f",
                 "amazon_rank": True,
-                "tiktok_views": ":,",
+                "tiktok_views": ":,",  # synthetic view count derived from Google Trends score
                 "category": False,
             },
-            labels={"virality_score": "TikTok Virality (0–100)", "demand_score": "Amazon Demand (0–100)"},
+            labels={"virality_score": "Google Trends Interest (0–100)", "demand_score": "Amazon Demand (0–100)"},
             color_discrete_sequence=px.colors.qualitative.Pastel,
         )
         fig.add_vline(x=50, line_dash="dash", line_color="rgba(150,150,150,0.5)")
@@ -192,7 +192,7 @@ def main() -> None:
             "trend_score": st.column_config.ProgressColumn("Trend", max_value=100, format="%.1f"),
             "virality_score": st.column_config.ProgressColumn("Virality", max_value=100, format="%.1f"),
             "demand_score": st.column_config.ProgressColumn("Demand", max_value=100, format="%.1f"),
-            "tiktok_views": st.column_config.NumberColumn("TikTok Views", format="%d"),
+            "tiktok_views": st.column_config.NumberColumn("Trend Interest (est. views)", format="%d"),
         },
     )
 
