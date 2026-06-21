@@ -1,177 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800" font-family="Arial, sans-serif">
-  <rect width="1000" height="800" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="850" viewBox="0 0 1100 850" font-family="Arial, sans-serif">
+  <rect width="1100" height="850" fill="#ffffff"/>
 
   <!-- Title block -->
-  <text x="500" y="42" font-size="26" font-weight="bold" text-anchor="middle">GAXETA / GASKET - STANLEY GROWLER</text>
-  <text x="500" y="68" font-size="15" text-anchor="middle" fill="#555">Desenho tecnico - Perfil em L (degrau) | Material: TPU 95A</text>
-  <line x1="40" y1="84" x2="960" y2="84" stroke="#000" stroke-width="1.5"/>
+  <text x="550" y="42" font-size="26" font-weight="bold" text-anchor="middle">GAXETA / GASKET - STANLEY GROWLER</text>
+  <text x="550" y="68" font-size="15" text-anchor="middle" fill="#555">Desenho tecnico - Perfil 3 labios / 2 canais | Material: TPU 95A</text>
+  <line x1="40" y1="84" x2="1060" y2="84" stroke="#000" stroke-width="1.5"/>
 
   <!-- ============ SECTION VIEW (CORTE) ============ -->
-  <text x="270" y="120" font-size="18" font-weight="bold" text-anchor="middle">VISTA EM CORTE (SECTION)</text>
+  <text x="300" y="118" font-size="18" font-weight="bold" text-anchor="middle">VISTA EM CORTE (SECTION)</text>
 
   <!--
-    L-shaped / stepped profile (as seen in zoomed photo):
+    Profile: 3 walls / 2 grooves (as seen in zoomed photo)
 
-    The gasket has:
-    - A WIDE FLAT FLANGE (aba) on the outer side (shorter height)
-    - A NARROW TALL LIP (labio) on the inner side (taller)
-    - Connected at the base
+    Cross-section (one side, from outer to inner):
 
-    Cross-section (one side of the ring, mirrored around center axis):
+    outer wall   middle lip   inner wall
+      ___          ___          ___
+     |   |        |   |        |   |
+     |   |        |   |        |   |
+     |   |________|   |________|   |
+     |                             |
+     |_____________________________|
+                 base
 
-         lip (labio)
-          ___
-         |   |
-         |   |
-    _____|   |
-   |         |    flange (aba)
-   |_________|
+    Inner wall is tallest, outer wall medium, middle lip shortest
   -->
 
-  <!-- Left half of the section (mirror of the gasket ring cut) -->
-  <!-- Outer flange (aba externa) - wider, shorter -->
-  <path d="
-    M 80 480
-    L 80 390
-    L 200 390
-    L 200 200
-    L 260 200
-    L 260 480
-    Z
-    " fill="#3a3a3a" stroke="#000" stroke-width="2"/>
+  <!-- Left half of section -->
+  <!-- Outer wall -->
+  <path d="M 65 500 L 65 300 L 120 300 L 120 420 L 180 420 L 180 340 L 225 340 L 225 420 L 290 420 L 290 230 L 345 230 L 345 500 Z"
+        fill="#3a3a3a" stroke="#000" stroke-width="2"/>
 
-  <!-- Right half (mirrored) -->
-  <path d="
-    M 310 480
-    L 310 200
-    L 370 200
-    L 370 390
-    L 490 390
-    L 490 480
-    Z
-    " fill="#3a3a3a" stroke="#000" stroke-width="2"/>
+  <!-- Right half of section (mirror) -->
+  <path d="M 380 500 L 380 230 L 435 230 L 435 420 L 500 420 L 500 340 L 545 340 L 545 420 L 605 420 L 605 300 L 660 300 L 660 500 Z"
+        fill="#3a3a3a" stroke="#000" stroke-width="2"/>
 
-  <!-- Gap between halves = center hole -->
-  <line x1="285" y1="160" x2="285" y2="520" stroke="#0a7" stroke-width="1" stroke-dasharray="14,4,3,4"/>
-  <text x="272" y="175" font-size="11" fill="#0a7" text-anchor="middle">eixo</text>
+  <!-- Center axis -->
+  <line x1="362" y1="180" x2="362" y2="540" stroke="#0a7" stroke-width="1" stroke-dasharray="14,4,3,4"/>
+  <text x="350" y="178" font-size="11" fill="#0a7" text-anchor="middle">eixo</text>
 
-  <!-- Dimension annotations on LEFT half -->
+  <!-- ===== DIMENSION LINES ===== -->
 
-  <!-- A: shown on top view only -->
+  <!-- D: inner wall height (tallest) -->
+  <line x1="36" y1="230" x2="36" y2="500" stroke="#c00" stroke-width="1.3"/>
+  <line x1="65" y1="230" x2="29" y2="230" stroke="#c00" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="65" y1="500" x2="29" y2="500" stroke="#c00" stroke-width="0.8"/>
+  <polygon points="36,230 32,244 40,244" fill="#c00"/>
+  <polygon points="36,500 32,486 40,486" fill="#c00"/>
+  <text x="15" y="370" font-size="22" font-weight="bold" fill="#c00">D</text>
 
-  <!-- D: height of lip (taller part) -->
-  <line x1="40" y1="200" x2="40" y2="480" stroke="#c00" stroke-width="1.2"/>
-  <line x1="80" y1="200" x2="33" y2="200" stroke="#c00" stroke-width="0.8" stroke-dasharray="3,3"/>
-  <line x1="80" y1="480" x2="33" y2="480" stroke="#c00" stroke-width="0.8"/>
-  <polygon points="40,200 36,214 44,214" fill="#c00"/>
-  <polygon points="40,480 36,466 44,466" fill="#c00"/>
-  <text x="22" y="345" font-size="22" font-weight="bold" fill="#c00">D</text>
+  <!-- E: outer wall height -->
+  <line x1="695" y1="300" x2="695" y2="500" stroke="#c00" stroke-width="1.3"/>
+  <line x1="660" y1="300" x2="703" y2="300" stroke="#c00" stroke-width="0.8"/>
+  <line x1="660" y1="500" x2="703" y2="500" stroke="#c00" stroke-width="0.8"/>
+  <polygon points="695,300 691,314 699,314" fill="#c00"/>
+  <polygon points="695,500 691,486 699,486" fill="#c00"/>
+  <text x="708" y="405" font-size="22" font-weight="bold" fill="#c00">E</text>
 
-  <!-- E: height of flange (shorter part) -->
-  <line x1="530" y1="390" x2="530" y2="480" stroke="#c00" stroke-width="1.2"/>
-  <line x1="490" y1="390" x2="538" y2="390" stroke="#c00" stroke-width="0.8"/>
-  <line x1="490" y1="480" x2="538" y2="480" stroke="#c00" stroke-width="0.8"/>
-  <polygon points="530,390 526,402 534,402" fill="#c00"/>
-  <polygon points="530,480 526,468 534,468" fill="#c00"/>
-  <text x="542" y="440" font-size="22" font-weight="bold" fill="#c00">E</text>
+  <!-- F: middle lip height -->
+  <line x1="555" y1="340" x2="555" y2="500" stroke="#c00" stroke-width="1.3"/>
+  <line x1="545" y1="340" x2="560" y2="340" stroke="#c00" stroke-width="0.8"/>
+  <line x1="545" y1="500" x2="560" y2="500" stroke="#c00" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <polygon points="555,340 551,354 559,354" fill="#c00"/>
+  <polygon points="555,500 551,486 559,486" fill="#c00"/>
+  <text x="563" y="425" font-size="22" font-weight="bold" fill="#c00">F</text>
 
-  <!-- F: lip wall thickness -->
-  <line x1="200" y1="175" x2="260" y2="175" stroke="#06c" stroke-width="1.2"/>
-  <line x1="200" y1="200" x2="200" y2="168" stroke="#06c" stroke-width="0.8"/>
-  <line x1="260" y1="200" x2="260" y2="168" stroke="#06c" stroke-width="0.8"/>
-  <polygon points="200,175 214,171 214,179" fill="#06c"/>
-  <polygon points="260,175 246,171 246,179" fill="#06c"/>
-  <text x="222" y="164" font-size="22" font-weight="bold" fill="#06c">F</text>
+  <!-- G: base/floor thickness -->
+  <line x1="150" y1="420" x2="150" y2="500" stroke="#06c" stroke-width="1.3"/>
+  <line x1="120" y1="420" x2="158" y2="420" stroke="#06c" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <polygon points="150,420 146,432 154,432" fill="#06c"/>
+  <polygon points="150,500 146,488 154,488" fill="#06c"/>
+  <text x="158" y="466" font-size="22" font-weight="bold" fill="#06c">G</text>
 
-  <!-- G: flange thickness (base) -->
-  <line x1="420" y1="390" x2="420" y2="480" stroke="#06c" stroke-width="1.2"/>
-  <line x1="370" y1="390" x2="427" y2="390" stroke="#06c" stroke-width="0.6" stroke-dasharray="3,3"/>
-  <polygon points="420,390 416,402 424,402" fill="#06c"/>
-  <polygon points="420,480 416,468 424,468" fill="#06c"/>
-  <text x="432" y="440" font-size="22" font-weight="bold" fill="#06c">G</text>
+  <!-- H: wall thickness (representative, on outer wall) -->
+  <line x1="605" y1="280" x2="660" y2="280" stroke="#06c" stroke-width="1.3"/>
+  <line x1="605" y1="300" x2="605" y2="273" stroke="#06c" stroke-width="0.8"/>
+  <line x1="660" y1="300" x2="660" y2="273" stroke="#06c" stroke-width="0.8"/>
+  <polygon points="605,280 619,276 619,284" fill="#06c"/>
+  <polygon points="660,280 646,276 646,284" fill="#06c"/>
+  <text x="624" y="270" font-size="22" font-weight="bold" fill="#06c">H</text>
+
+  <!-- I: groove width (canal 1, between outer and middle) -->
+  <line x1="120" y1="395" x2="180" y2="395" stroke="#093" stroke-width="1.3"/>
+  <polygon points="120,395 134,391 134,399" fill="#093"/>
+  <polygon points="180,395 166,391 166,399" fill="#093"/>
+  <text x="141" y="388" font-size="20" font-weight="bold" fill="#093">I</text>
+
+  <!-- J: groove width (canal 2, between middle and inner) -->
+  <line x1="225" y1="395" x2="290" y2="395" stroke="#093" stroke-width="1.3"/>
+  <polygon points="225,395 239,391 239,399" fill="#093"/>
+  <polygon points="290,395 276,391 276,399" fill="#093"/>
+  <text x="248" y="388" font-size="20" font-weight="bold" fill="#093">J</text>
 
   <!-- Labels -->
-  <text x="80" y="510" font-size="11" fill="#333">labio (lip)</text>
-  <text x="370" y="510" font-size="11" fill="#333">aba (flange)</text>
-  <text x="190" y="510" font-size="11" fill="#333">labio (lip)</text>
-  <text x="432" y="510" font-size="11" fill="#333">aba (flange)</text>
+  <text x="55" y="530" font-size="10" fill="#333" text-anchor="middle">parede</text>
+  <text x="55" y="542" font-size="10" fill="#333" text-anchor="middle">interna</text>
+  <text x="200" y="530" font-size="10" fill="#333" text-anchor="middle">labio</text>
+  <text x="200" y="542" font-size="10" fill="#333" text-anchor="middle">do meio</text>
+  <text x="327" y="530" font-size="10" fill="#333" text-anchor="middle">parede</text>
+  <text x="327" y="542" font-size="10" fill="#333" text-anchor="middle">interna</text>
 
-  <!-- Step annotation -->
-  <path d="M 200 395 Q 190 350 160 340" fill="none" stroke="#555" stroke-width="0.8"/>
-  <text x="100" y="338" font-size="11" fill="#555">degrau (step)</text>
+  <text x="400" y="530" font-size="10" fill="#333" text-anchor="middle">parede</text>
+  <text x="400" y="542" font-size="10" fill="#333" text-anchor="middle">interna</text>
+  <text x="525" y="530" font-size="10" fill="#333" text-anchor="middle">labio</text>
+  <text x="525" y="542" font-size="10" fill="#333" text-anchor="middle">do meio</text>
+  <text x="640" y="530" font-size="10" fill="#333" text-anchor="middle">parede</text>
+  <text x="640" y="542" font-size="10" fill="#333" text-anchor="middle">externa</text>
 
   <!-- ============ TOP VIEW (VISTA DE TOPO) ============ -->
-  <text x="760" y="120" font-size="18" font-weight="bold" text-anchor="middle">VISTA DE TOPO (TOP)</text>
+  <text x="880" y="118" font-size="18" font-weight="bold" text-anchor="middle">VISTA DE TOPO (TOP)</text>
 
-  <!-- Outer circle (flange OD) -->
-  <circle cx="760" cy="330" r="170" fill="none" stroke="#000" stroke-width="2"/>
-  <!-- Step circle (where lip meets flange = lip OD) -->
-  <circle cx="760" cy="330" r="120" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="8,4"/>
-  <!-- Center hole (lip ID) -->
-  <circle cx="760" cy="330" r="90" fill="none" stroke="#000" stroke-width="2"/>
+  <!-- Circles from outside in: outer wall OD, outer wall ID, middle lip OD, middle lip ID, inner wall OD, inner wall ID -->
+  <circle cx="880" cy="340" r="170" fill="none" stroke="#000" stroke-width="2"/>
+  <circle cx="880" cy="340" r="155" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="880" cy="340" r="135" fill="none" stroke="#000" stroke-width="1.2"/>
+  <circle cx="880" cy="340" r="122" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="880" cy="340" r="100" fill="none" stroke="#000" stroke-width="1.2"/>
+  <circle cx="880" cy="340" r="85" fill="none" stroke="#000" stroke-width="2"/>
 
-  <!-- fills -->
-  <circle cx="760" cy="330" r="170" fill="#3a3a3a" fill-opacity="0.08"/>
-  <circle cx="760" cy="330" r="120" fill="#3a3a3a" fill-opacity="0.12"/>
-  <circle cx="760" cy="330" r="90" fill="#ffffff"/>
+  <!-- fills for readability -->
+  <circle cx="880" cy="340" r="170" fill="#3a3a3a" fill-opacity="0.06"/>
+  <circle cx="880" cy="340" r="155" fill="#fff" fill-opacity="0.5"/>
+  <circle cx="880" cy="340" r="135" fill="#3a3a3a" fill-opacity="0.1"/>
+  <circle cx="880" cy="340" r="122" fill="#fff" fill-opacity="0.5"/>
+  <circle cx="880" cy="340" r="100" fill="#3a3a3a" fill-opacity="0.1"/>
+  <circle cx="880" cy="340" r="85" fill="#ffffff"/>
 
   <!-- center cross -->
-  <line x1="760" y1="140" x2="760" y2="520" stroke="#0a7" stroke-width="0.8" stroke-dasharray="14,4,3,4"/>
-  <line x1="570" y1="330" x2="950" y2="330" stroke="#0a7" stroke-width="0.8" stroke-dasharray="14,4,3,4"/>
+  <line x1="880" y1="150" x2="880" y2="530" stroke="#0a7" stroke-width="0.8" stroke-dasharray="14,4,3,4"/>
+  <line x1="690" y1="340" x2="1070" y2="340" stroke="#0a7" stroke-width="0.8" stroke-dasharray="14,4,3,4"/>
 
-  <!-- A: outer diameter (flange) -->
-  <line x1="590" y1="570" x2="930" y2="570" stroke="#c00" stroke-width="1.2"/>
-  <line x1="590" y1="330" x2="590" y2="578" stroke="#c00" stroke-width="0.6" stroke-dasharray="3,3"/>
-  <line x1="930" y1="330" x2="930" y2="578" stroke="#c00" stroke-width="0.6" stroke-dasharray="3,3"/>
-  <polygon points="590,570 604,566 604,574" fill="#c00"/>
-  <polygon points="930,570 916,566 916,574" fill="#c00"/>
-  <text x="745" y="592" font-size="20" font-weight="bold" fill="#c00">A (&#216; ext aba)</text>
+  <!-- A: outer diameter -->
+  <line x1="710" y1="570" x2="1050" y2="570" stroke="#c00" stroke-width="1.2"/>
+  <line x1="710" y1="340" x2="710" y2="578" stroke="#c00" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <line x1="1050" y1="340" x2="1050" y2="578" stroke="#c00" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <polygon points="710,570 724,566 724,574" fill="#c00"/>
+  <polygon points="1050,570 1036,566 1036,574" fill="#c00"/>
+  <text x="865" y="590" font-size="18" font-weight="bold" fill="#c00">A (&#216; ext)</text>
 
-  <!-- B: inner diameter (lip hole) -->
-  <line x1="670" y1="330" x2="850" y2="330" stroke="#c00" stroke-width="1.2"/>
-  <polygon points="670,330 684,326 684,334" fill="#c00"/>
-  <polygon points="850,330 836,326 836,334" fill="#c00"/>
-  <text x="733" y="322" font-size="20" font-weight="bold" fill="#c00">B (&#216; int)</text>
+  <!-- B: inner diameter -->
+  <line x1="795" y1="340" x2="965" y2="340" stroke="#c00" stroke-width="1.2"/>
+  <polygon points="795,340 809,336 809,344" fill="#c00"/>
+  <polygon points="965,340 951,336 951,344" fill="#c00"/>
+  <text x="855" y="332" font-size="18" font-weight="bold" fill="#c00">B (&#216; int)</text>
 
-  <!-- C: lip outer diameter (step diameter) -->
-  <line x1="640" y1="205" x2="880" y2="205" stroke="#093" stroke-width="1.2"/>
-  <line x1="640" y1="330" x2="640" y2="198" stroke="#093" stroke-width="0.6" stroke-dasharray="3,3"/>
-  <line x1="880" y1="330" x2="880" y2="198" stroke="#093" stroke-width="0.6" stroke-dasharray="3,3"/>
-  <polygon points="640,205 654,201 654,209" fill="#093"/>
-  <polygon points="880,205 866,201 866,209" fill="#093"/>
-  <text x="745" y="197" font-size="20" font-weight="bold" fill="#093">C (&#216; degrau)</text>
+  <!-- C: middle lip diameter -->
+  <line x1="745" y1="195" x2="1015" y2="195" stroke="#093" stroke-width="1.2"/>
+  <line x1="745" y1="340" x2="745" y2="188" stroke="#093" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <line x1="1015" y1="340" x2="1015" y2="188" stroke="#093" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <polygon points="745,195 759,191 759,199" fill="#093"/>
+  <polygon points="1015,195 1001,191 1001,199" fill="#093"/>
+  <text x="860" y="187" font-size="18" font-weight="bold" fill="#093">C (&#216; labio meio)</text>
 
-  <!-- label the rings -->
-  <text x="610" y="420" font-size="11" fill="#555">aba (flange)</text>
-  <text x="658" y="390" font-size="11" fill="#555">labio (lip)</text>
-
-  <!-- dashed line from step circle -->
-  <text x="855" y="295" font-size="10" fill="#093">degrau</text>
+  <!-- labels on top view -->
+  <text x="720" y="440" font-size="9" fill="#555">par. ext</text>
+  <text x="750" y="410" font-size="9" fill="#555">canal</text>
+  <text x="770" y="385" font-size="9" fill="#555">labio</text>
+  <text x="790" y="368" font-size="9" fill="#555">canal</text>
+  <text x="810" y="355" font-size="9" fill="#555">par. int</text>
 
   <!-- ============ LEGEND / TABLE ============ -->
-  <rect x="40" y="620" width="580" height="160" fill="none" stroke="#000" stroke-width="1.2"/>
-  <line x1="40" y1="648" x2="620" y2="648" stroke="#000" stroke-width="1"/>
+  <rect x="40" y="620" width="620" height="210" fill="none" stroke="#000" stroke-width="1.2"/>
+  <line x1="40" y1="648" x2="660" y2="648" stroke="#000" stroke-width="1"/>
   <text x="50" y="641" font-size="15" font-weight="bold">MEDIDAS A PREENCHER (mm)</text>
 
-  <text x="55" y="672" font-size="14"><tspan font-weight="bold" fill="#c00">A</tspan> = Diametro externo da aba (flange)  ___________</text>
-  <text x="55" y="696" font-size="14"><tspan font-weight="bold" fill="#c00">B</tspan> = Diametro interno (furo central do labio)  ___________</text>
-  <text x="55" y="720" font-size="14"><tspan font-weight="bold" fill="#093">C</tspan> = Diametro do degrau (onde aba encontra labio)  ___________</text>
-  <text x="55" y="744" font-size="14"><tspan font-weight="bold" fill="#c00">D</tspan> = Altura total do labio (parte alta)  ___________</text>
-  <text x="55" y="768" font-size="14"><tspan font-weight="bold" fill="#c00">E</tspan> = Altura da aba (parte baixa)  ___________</text>
+  <text x="55" y="675" font-size="14"><tspan font-weight="bold" fill="#c00">A</tspan> = Diametro externo (borda de fora)  ___________</text>
+  <text x="55" y="699" font-size="14"><tspan font-weight="bold" fill="#c00">B</tspan> = Diametro interno (furo central)  ___________</text>
+  <text x="55" y="723" font-size="14"><tspan font-weight="bold" fill="#093">C</tspan> = Diametro do labio do meio  ___________</text>
+  <text x="55" y="747" font-size="14"><tspan font-weight="bold" fill="#c00">D</tspan> = Altura parede interna (mais alta)  ___________</text>
+  <text x="55" y="771" font-size="14"><tspan font-weight="bold" fill="#c00">E</tspan> = Altura parede externa  ___________</text>
 
-  <text x="380" y="720" font-size="14"><tspan font-weight="bold" fill="#06c">F</tspan> = Espessura do labio  ___________</text>
-  <text x="380" y="744" font-size="14"><tspan font-weight="bold" fill="#06c">G</tspan> = Espessura da aba  ___________</text>
-  <text x="55" y="768" font-size="12" fill="#777"></text>
+  <text x="380" y="675" font-size="14"><tspan font-weight="bold" fill="#c00">F</tspan> = Altura labio do meio  ___________</text>
+  <text x="380" y="699" font-size="14"><tspan font-weight="bold" fill="#06c">G</tspan> = Espessura da base  ___________</text>
+  <text x="380" y="723" font-size="14"><tspan font-weight="bold" fill="#06c">H</tspan> = Espessura das paredes  ___________</text>
+  <text x="380" y="747" font-size="14"><tspan font-weight="bold" fill="#093">I</tspan> = Largura canal externo  ___________</text>
+  <text x="380" y="771" font-size="14"><tspan font-weight="bold" fill="#093">J</tspan> = Largura canal interno  ___________</text>
 
-  <!-- values box currently used -->
-  <rect x="640" y="620" width="320" height="160" fill="none" stroke="#000" stroke-width="1.2"/>
-  <line x1="640" y1="648" x2="960" y2="648" stroke="#000" stroke-width="1"/>
-  <text x="650" y="641" font-size="15" font-weight="bold">VALORES ATUAIS (estimados)</text>
-  <text x="650" y="672" font-size="13">A = 73 mm (&#216; ext aba)</text>
-  <text x="650" y="694" font-size="13">B = 47 mm (&#216; int labio)</text>
-  <text x="650" y="716" font-size="13">C = ? (&#216; degrau - preciso medir)</text>
-  <text x="650" y="738" font-size="13">D = 10 mm (alt labio) | E = ? (alt aba)</text>
-  <text x="650" y="760" font-size="13">F = 2 mm (esp labio) | G = 2 mm (esp aba)</text>
+  <text x="55" y="818" font-size="12" fill="#777">Obs.: I e J podem ser calculados a partir de A, B, C, H. Se nao conseguir medir, deixe em branco.</text>
+
+  <!-- values box -->
+  <rect x="680" y="620" width="380" height="210" fill="none" stroke="#000" stroke-width="1.2"/>
+  <line x1="680" y1="648" x2="1060" y2="648" stroke="#000" stroke-width="1"/>
+  <text x="690" y="641" font-size="15" font-weight="bold">VALORES ATUAIS (a confirmar)</text>
+  <text x="690" y="675" font-size="13">A = 73 mm (&#216; ext)</text>
+  <text x="690" y="699" font-size="13">B = 47 mm (&#216; int)</text>
+  <text x="690" y="723" font-size="13">C = ? (&#216; labio meio - preciso medir)</text>
+  <text x="690" y="747" font-size="13">D = 10 mm (alt par. interna)</text>
+  <text x="690" y="771" font-size="13">E = ? | F = ? | G = 2 | H = 2</text>
+  <text x="690" y="795" font-size="13">I = ? | J = ?</text>
+  <text x="690" y="818" font-size="12" fill="#777">Preciso de D, E, F para acertar as alturas.</text>
 
 </svg>
