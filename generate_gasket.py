@@ -33,8 +33,8 @@ import sys
 
 OD = 58.0           # Outer diameter of the gasket
 ID = 40.0           # Inner diameter (center hole)
-H_OUTER = 6.5       # Height of the outer wall
-H_INNER = 5.0       # Height of the inner wall
+H_OUTER = 5.0       # Height of the outer wall (shorter, sits in lid groove)
+H_INNER = 6.5       # Height of the inner wall (taller, seals against growler rim)
 T_WALL = 2.0        # Wall thickness (both inner and outer)
 T_BASE = 2.0        # Base/floor thickness
 N_SEGMENTS = 120    # Circular resolution (higher = smoother)
